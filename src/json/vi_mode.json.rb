@@ -20,10 +20,10 @@ def main
         #
         # Modifier keys such as "command", "option" or "control" cannot be used here.
       },
-      {
-        "description" => "Vi Mode [D as Trigger Key]",
-        "manipulators" => generate_vi_mode("d"),
-      },
+      # {
+      #   "description" => "Vi Mode [D as Trigger Key]",
+      #   "manipulators" => generate_vi_mode("d"),
+      # },
       {
         "description" => "Vi Visual Mode",
         "manipulators" => generate_vi_visual_mode("v"),
@@ -39,6 +39,7 @@ def generate_vi_mode(trigger_key)
     generate_vi_mode_single_rule("h", "left_arrow", [], trigger_key),
     generate_vi_mode_single_rule("l", "right_arrow", [], trigger_key),
     generate_vi_mode_single_rule("f", "fn", [], trigger_key),
+    generate_vi_mode_single_rule("d", "delete_or_backspace", [], trigger_key),
     generate_vi_mode_single_rule("b", "left_arrow", ["left_option"], trigger_key),
     generate_vi_mode_single_rule("w", "right_arrow", ["left_option"], trigger_key),
     generate_vi_mode_single_rule("0", "a", ["left_control"], trigger_key),
